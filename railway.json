@@ -1,0 +1,21 @@
+{
+    "builds": [
+      {
+        "src": "backend/package.json",
+        "use": "@railway/node",
+        "name": "Backend",
+        "dir": "backend",
+        "config": {
+          "installCommand": "npm install",
+          "buildCommand": "npm run build:frontend",
+          "startCommand": "npm start"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "backend/index.js"
+      }
+    ]
+  }
